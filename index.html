@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <title> Sorting Algorithms </title>
+    <meta name="Admiral_Awesome" content="Sorting Algorithms" />
+    <script type="text/javascript" src="js/dom-detour.js"></script>
+    
+
+</head>
+
+<body>
+
+    <div>
+        <p>some info ... <span> even more info</span> </p> 
+        <div><pre>spaces                                                    more SPACES</pre> </div>
+        <p> Admiral_Awesome is watching you </p>
+        
+    </div>
+    <br>
+    <br>
+    <script type="text/javascript">
+    
+    window.onload = function () {
+        var elem;
+        elem = getTree(document);
+        console.log(elem);
+        elem.sort(function(a, b) {
+            if ( a.depth > b.depth) {
+
+                return 1;
+            }
+            if ( b.depth > a.depth) {
+                return -1;
+            }
+            return 0;
+        });
+        for ( var counter = 0; counter < elem.length; counter++) {
+            var p = document.createElement("P");
+            p.innerHTML = elem[counter].nodeName + " depth : " + elem[counter].depth;
+            document.body.appendChild(p);
+        }
+    }
+
+
+
+    </script>
+</body>
+
+</html>
